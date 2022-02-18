@@ -18,9 +18,9 @@ class Persona {
     
     }
     
-    addMascota(mascota) {
+    addMascota(nuevaMascota) {
     
-    this.mascotas.push(mascota)
+    this.mascotas.push(nuevaMascota)
     
     }
     
@@ -46,9 +46,9 @@ class Persona {
     
     const nombres = []
     
-    for (const libro of this.libros) {
+    for (const libros of this.libros) {
     
-    nombres.push(libro.nombre)
+        nombres.push(libros.nombre)
     
     }
     
@@ -57,13 +57,19 @@ class Persona {
     }
 }
 
-
-const p = new Persona('pepa', 'pig', '[pikachu]', '[]')
-
-console.log(p)
-
-const p2 = new Persona('charly', 'martinez', ['alma', 'dalila'], '[el señor de los anillos]')
+const p2 = new Persona('charly', 'martinez', ['alma', 'dalila'], ['el señor de los anillos'])
 
 console.log(p2)
 
+console.log('el nombre de la persona creada es', p2.getFullName())
+
+p2.addMascota(nuevaMascota = 'pelusa')
+console.log(p2)
+
 console.log('las cantidades de mascotas de charly son', p2.countMascotas())
+
+p2.addBook('batallas navales' , 'DE SIMON')
+console.log(p2)
+
+console.log(p2.getBookNames()[1])
+
